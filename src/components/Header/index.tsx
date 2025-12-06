@@ -8,7 +8,6 @@ import { useAppSelector } from "@/redux/store";
 import { useSelector } from "react-redux";
 import { selectTotalPrice } from "@/redux/features/cart-slice";
 import { useCartModalContext } from "@/app/context/CartSidebarModalContext";
-import Image from "next/image";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -62,14 +61,22 @@ const Header = () => {
         >
           {/* <!-- header top left --> */}
           <div className="xl:w-auto flex-col sm:flex-row w-full flex sm:justify-between sm:items-center gap-5 sm:gap-10">
-            <Link className="flex-shrink-0" href="/">
-              <Image
-                src="/images/logo/logo.svg"
-                alt="Logo"
-                width={219}
-                height={36}
-              />
-            </Link>
+       <Link
+  href="/"
+  className="flex-shrink-0 flex items-center gap-3"
+  aria-label="Rahul Vishnoi"
+>
+  <div className="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold">
+    R
+  </div>
+  <div className="leading-tight">
+    <div className="text-xl font-extrabold text-slate-800">Rahul</div>
+    <div className="text-sm text-indigo-600 font-semibold -mt-1">
+      Vishnoi
+    </div>
+  </div>
+</Link>
+
 
             <div className="max-w-[475px] w-full">
               <form>
